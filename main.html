@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Service Hub - Your Local Professional Services</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for professional icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for smoother aesthetics and background matching poster's vibe */
+        :root {
+            --primary-color: #2563eb; /* Blue 600 */
+            --secondary-color: #f59e0b; /* Amber 500 (for accents) */
+            --background-color: #f8f8f8; /* Light Off-White */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); /* Deep Blue Gradient */
+            color: white;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        /* Custom focus ring for accessibility */
+        .custom-focus:focus-visible {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 3px;
+            border-radius: 0.5rem;
+        }
+        /* Simple subtle animation for the hero section elements */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation (Simple) -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-blue-700">Home Service Hub</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300 custom-focus">Services</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition duration-300 custom-focus">How It Works</a>
+                <a href="#booking" class="text-blue-600 font-semibold hover:text-blue-800 transition duration-300 custom-focus">Book Now</a>
+            </nav>
+            <button class="md:hidden p-2 rounded-lg text-blue-600 hover:bg-blue-50 custom-focus" aria-label="Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-xl md:text-2xl font-medium mb-3 fade-in-up">Your Local Home Service Hub</p>
+            <h2 class="text-4xl sm:text-6xl font-black mb-6 fade-in-up delay-1">
+                Find <span class="text-yellow-300">Verified Professionals</span> Instantly.
+            </h2>
+            <p class="text-lg mb-10 max-w-2xl mx-auto fade-in-up delay-2">
+                Plumbing, Electrical, Cleaning, and more. Get trusted experts at your doorstep with easy WhatsApp or app booking.
+            </p>
+            <a href="#booking" class="inline-block px-10 py-4 bg-yellow-400 text-gray-900 font-bold rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 fade-in-up delay-3 custom-focus">
+                Book Your Service Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Our Wide Range of Services</h2>
+            <p class="text-center text-gray-600 text-xl mb-12 max-w-3xl mx-auto">
+                No matter the task, we connect you with the right verified professional for a hassle-free experience.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="service-list">
+                <!-- Service Cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section (Based on Poster Points) -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">How It Works: Simple & Secure</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Step 1: Select -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:shadow-2xl transition duration-500 custom-focus">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">
+                        <i data-lucide="search" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-900">1. Select & Submit</h3>
+                    <p class="text-gray-600">Choose the service you need, provide your details, and hit 'Book'.</p>
+                </div>
+
+                <!-- Step 2: Verification -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:shadow-2xl transition duration-500 custom-focus">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-900">2. Connect with Verified Pros</h3>
+                    <p class="text-gray-600">We instantly connect you with our pre-vetted, trusted local experts.</p>
+                </div>
+
+                <!-- Step 3: Service -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:shadow-2xl transition duration-500 custom-focus">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl font-bold">
+                        <i data-lucide="handshake" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-900">3. Job Done Right</h3>
+                    <p class="text-gray-600">The professional arrives on time, performs the service, and ensures your satisfaction.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Book Your Service Appointment</h2>
+            <p class="text-center text-gray-600 text-xl mb-12">Fill out the form below or simply call us to schedule your service.</p>
+
+            <form id="booking-form" class="bg-white p-8 md:p-10 rounded-xl shadow-2xl space-y-6">
+                
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Your Full Name</label>
+                    <input type="text" id="name" name="name" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 custom-focus"
+                           placeholder="John Doe">
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label for="phone" class="block text-lg font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 custom-focus"
+                           placeholder="(555) 555-5555">
+                </div>
+                
+                <!-- Service Selection -->
+                <div>
+                    <label for="service" class="block text-lg font-medium text-gray-700 mb-2">Select Service Needed</label>
+                    <select id="service" name="service" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white appearance-none focus:ring-blue-500 focus:border-blue-500 transition duration-300 custom-focus">
+                        <option value="" disabled selected>Choose a Service...</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+
+                <!-- Location / Address -->
+                <div>
+                    <label for="location" class="block text-lg font-medium text-gray-700 mb-2">Location / Address</label>
+                    <textarea id="location" name="location" rows="3" required
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 custom-focus"
+                              placeholder="House Number, Street, City, ZIP"></textarea>
+                </div>
+                
+                <!-- Call Option Message Box -->
+                <div class="text-center p-4 bg-yellow-100 border border-yellow-300 rounded-lg">
+                    <p class="text-yellow-800 font-semibold flex items-center justify-center">
+                        <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i>
+                        Prefer to approach by call? Our number is <a href="tel:1234567890" class="underline hover:text-yellow-900">123-456-7890</a>.
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-[1.01] custom-focus">
+                    Book Appointment
+                </button>
+            </form>
+
+            <!-- Submission Message Box (Hidden by Default) -->
+            <div id="submission-message" class="mt-8 p-6 bg-green-100 border border-green-300 text-green-800 rounded-xl hidden">
+                <p class="text-xl font-semibold">Thank you for your request!</p>
+                <p>We have received your booking and a professional will be in touch with you shortly to confirm the appointment.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold mb-3">Home Service Hub</h3>
+            <p class="text-gray-400 mb-4">Connecting you with local, trusted expertise.</p>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="#" class="hover:text-white transition duration-300 custom-focus"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition duration-300 custom-focus"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition duration-300 custom-focus"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">&copy; 2025 Home Service Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Data for Services (Used to dynamically generate cards and form options)
+        const services = [
+            {
+                name: "Electrical Services",
+                icon: "zap",
+                description: "Wiring, repairs, installation of lights, fans, and appliances by licensed electricians.",
+                image: "https://placehold.co/400x250/3b82f6/ffffff?text=Electrical+Work"
+            },
+            {
+                name: "Plumbing Solutions",
+                icon: "faucet",
+                description: "Fixing leaks, drain cleaning, water heater repair, and new fixture installations.",
+                image: "https://placehold.co/400x250/22c55e/ffffff?text=Plumbing+Repair"
+            },
+            {
+                name: "Deep Cleaning & Maid Service",
+                icon: "cleaning-bucket",
+                description: "Thorough home cleaning, specialty deep cleans, and regular maid services.",
+                image: "https://placehold.co/400x250/f59e0b/ffffff?text=Cleaning+Service"
+            },
+            {
+                name: "Interior/Exterior Painting",
+                icon: "paint-roller",
+                description: "Professional wall painting, surface preparation, and quality finish guarantee.",
+                image: "https://placehold.co/400x250/ef4444/ffffff?text=Painting+Experts"
+            },
+            {
+                name: "Gardening & Landscaping",
+                icon: "shovel",
+                description: "Lawn care, pruning, garden design, and complete landscape maintenance.",
+                image: "https://placehold.co/400x250/14b8a6/ffffff?text=Gardening+Care"
+            },
+            {
+                name: "Washing Services",
+                icon: "washing-machine",
+                description: "Appliance washing (machine repair) or pressure washing for external surfaces and driveways.",
+                image: "https://placehold.co/400x250/8b5cf6/ffffff?text=Washing+Service"
+            },
+            {
+                name: "Pumping/Dewatering",
+                icon: "package-open",
+                description: "Emergency pumping services for flooded basements and water removal.",
+                image: "https://placehold.co/400x250/ec4899/ffffff?text=Pumping+Service"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            const serviceListContainer = document.getElementById('service-list');
+            const serviceSelect = document.getElementById('service');
+            const bookingForm = document.getElementById('booking-form');
+            const submissionMessage = document.getElementById('submission-message');
+
+            // 1. Populate Service Cards and Form Select Options
+            services.forEach(service => {
+                // A. Create Service Card for the Services Section
+                const cardHtml = `
+                    <div class="service-card bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-blue-500 custom-focus" tabindex="0">
+                        <div class="mb-4 rounded-lg overflow-hidden h-40">
+                            <!-- Directive A: Placeholder Image. Replace 'src' with your actual service image URL here. -->
+                            <img src="${service.image}" alt="${service.name}" class="w-full h-full object-cover rounded-md" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/60a5fa/ffffff?text=Service+Image+Placeholder';" />
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="${service.icon}" class="w-7 h-7 text-blue-600 mr-3 flex-shrink-0"></i>
+                            <h3 class="text-xl font-bold text-gray-900">${service.name}</h3>
+                        </div>
+                        <p class="text-gray-600">${service.description}</p>
+                        <a href="#booking" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-800 transition duration-300">Book Now &rarr;</a>
+                    </div>
+                `;
+                serviceListContainer.innerHTML += cardHtml;
+
+                // B. Create Option for the Booking Form Select Field
+                const option = document.createElement('option');
+                option.value = service.name;
+                option.textContent = service.name;
+                serviceSelect.appendChild(option);
+            });
+
+            // Re-initialize Lucide Icons to render the new icons in the dynamically created cards
+            lucide.createIcons();
+
+            // 2. Handle Form Submission
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Stop the default form submission
+
+                // Capture form data
+                const formData = new FormData(bookingForm);
+                const data = {
+                    name: formData.get('name'),
+                    phone: formData.get('phone'),
+                    service: formData.get('service'),
+                    location: formData.get('location')
+                };
+
+                // In a real application, you would send this 'data' object to your backend/database (e.g., Firestore)
+                // For this demonstration, we will just simulate success.
+                console.log("Booking Data Submitted:", data);
+                
+                // Show the success message
+                submissionMessage.classList.remove('hidden');
+                bookingForm.classList.add('hidden'); // Hide the form after submission
+
+                // Optional: Scroll to the message
+                submissionMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // Reset the form (optional, since it's hidden)
+                // bookingForm.reset(); 
+            });
+        });
+    </script>
+
+</body>
+</html>
